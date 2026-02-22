@@ -1,0 +1,73 @@
+﻿<Page x:Class="Hastane.Views.HastaIslemleri"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hastane.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HastaIslemleri">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" x:Name="txtHastaId" materialDesign:HintAssist.Hint="Hasta Id" PreviewTextInput="txtHastaId_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10" />
+
+        <Border Grid.Row="1" Margin="0,10" BorderThickness="4" BorderBrush="{StaticResource MaterialDesign.Brush.Primary.Dark}" />
+
+        <Grid Grid.Row="2" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="5" Content="Randevu Kaydi" FontSize="16" />
+            <ComboBox Grid.Row="1" Grid.Column="0" x:Name="cmbRandevuBolumler" Margin="10" SelectionChanged="cmbRandevuBolumler_SelectionChanged" materialDesign:HintAssist.Hint="Bolum" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cmbRandevuDoktorlar" Margin="10" materialDesign:HintAssist.Hint="Doktor" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+            <DatePicker Grid.Row="1" Grid.Column="2" x:Name="dpRandevuTarih" Margin="10" materialDesign:HintAssist.Hint="Tarih" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+            <materialDesign:TimePicker Grid.Row="1" Grid.Column="3" x:Name="tpRandevuSaat" Margin="10" materialDesign:HintAssist.Hint="Saat" Style="{StaticResource MaterialDesignOutlinedTimePicker}" Is24Hours="True" />
+            <Button Grid.Row="1" Grid.Column="4" x:Name="btnRandevuEkle" Margin="10" Content="Ekle" Click="btnRandevuEkle_Click" Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}" Height="40" Width="80" />
+        </Grid>
+
+        <Border Grid.Row="3" Margin="0,10" BorderThickness="4" BorderBrush="{StaticResource MaterialDesign.Brush.Primary.Dark}" />
+
+        <Grid Grid.Row="4" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="5" Content="Ameliyat Kaydi" FontSize="16" />
+            <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtAmeliyatAd" Margin="10" materialDesign:HintAssist.Hint="Ameliyat Adi" Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cmbAmeliyatBolumler" Margin="10" SelectionChanged="cmbAmeliyatBolumler_SelectionChanged" materialDesign:HintAssist.Hint="Bolum" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+            <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cmbAmeliyatDoktorlar" Margin="10" materialDesign:HintAssist.Hint="Doktor" Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+            <DatePicker Grid.Row="1" Grid.Column="3" x:Name="dpAmeliyatTarih" Margin="10" materialDesign:HintAssist.Hint="Tarih" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+            <materialDesign:TimePicker Grid.Row="1" Grid.Column="4" x:Name="tpAmeliyatSaat" Margin="10" materialDesign:HintAssist.Hint="Saat" Style="{StaticResource MaterialDesignOutlinedTimePicker}" Is24Hours="True" />
+            <Button Grid.Row="1" Grid.Column="5" x:Name="btnAmeliyatEkle" Margin="10" Content="Ekle" Click="btnAmeliyatEkle_Click" Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}" Height="40" Width="80" />
+        </Grid>
+    </Grid>
+</Page>
